@@ -39,7 +39,7 @@ export CUBLAS_WORKSPACE_CONFIG=:16:8
 ```
 
 ## Data
-The data used in this project is available at [LINK](https://viscom.datasets.uni-ulm.de/WSCD/Data.zip). 
+The data used in this project is available at [LINK](https://viscom.datasets.uni-ulm.de/WSCD/data.zip). 
 
 The data was previousely introduced in 
 
