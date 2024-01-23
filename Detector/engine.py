@@ -26,8 +26,7 @@ def train_one_epoch(model, optimizer, data_loader, scaler, device, epoch, print_
 
     for images, targets in metric_logger.log_every(data_loader, print_freq, header):
         images = list(image.to(device) for image in images)
-
-        targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
+        targets = [{k: v.to(device) for k, v in t.items() if type(v) != str} for t in targets]
         optimizer.zero_grad()
 
         with torch.cuda.amp.autocast():
