@@ -164,4 +164,5 @@ wandb/*
 TrainingRuns/*
 Data/*
 *.sh
-
+*.yml
+slurm_log/*
