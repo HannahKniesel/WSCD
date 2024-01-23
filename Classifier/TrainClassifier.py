@@ -36,9 +36,9 @@ class Training():
         # wandb
         if(not sweep):
             os.environ['WANDB_PROJECT']= args.project        
-        name = f"{self.wandb_name}_{args.dataset}_Time_{self.args.annotation_time}_Perc_{self.args.percentage}
+        name = f"{self.wandb_name}_{args.dataset}_Time_{self.args.annotation_time}_Perc_{self.args.percentage}"
         wandb.init(config = args, reinit=True, group = name, mode = self.args.wandb_mode)
-        wandb_name = f"{seed}_{name}_{wandb.run.id}
+        wandb_name = f"{seed}_{name}_{wandb.run.id}"
         wandb.run.name = wandb_name
         wandb.run.save()
 

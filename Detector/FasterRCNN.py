@@ -138,7 +138,7 @@ class Detection_FRCNN():
     def init_logging(self, wandb_run_id=-1):
         if(wandb_run_id < 0):
             
-            self.wandb_name = f"FRCNN_Time{self.args.annotation_time}_Perc{self.args.percentage}_{self.label_data}_{self.args.dataset}
+            self.wandb_name = f"FRCNN_Time{self.args.annotation_time}_Perc{self.args.percentage}_{self.label_data}_{self.args.dataset}"
             if(self.label_data=="bin"):
                 if(self.threshold == -1):
                     self.wandb_name = self.wandb_name+"_probabilities"

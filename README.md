@@ -14,6 +14,10 @@ To get started using the repository, please follow the instructions below.
 We recomment to make use of the provided docker image [hannahkniesel/wscd:latest](https://hub.docker.com/r/hannahkniesel/wscd). 
 This docker image is built upon the `1.12.0-cuda11.3-cudnn8-runtime` base image from [here](https://hub.docker.com/layers/pytorch/pytorch/1.12.0-cuda11.3-cudnn8-runtime/images/sha256-1ef1f61b13738de8086ae7e1ce57c89f154e075dae0b165f7590b9405efeb6fe?context=explore) and additionally contains all other requirements.
 ```bash
+docker run --gpus all -it -p 8888:8888 --rm --ipc=host -v <path-to-repository>:/WSCD/ -w /WSCD/ --name wscd_c hannahkniesel/wscd:latest bash
+```
+In case you want to store the data in a different place locally, please do: 
+```bash
 docker run --gpus all -it -p 8888:8888 --rm --ipc=host -v <path-to-repository>:/WSCD/ -v <path-to-data>:/WSCD/Data/ -w /WSCD/ --name wscd_c hannahkniesel/wscd:latest bash
 ```
 
@@ -35,7 +39,7 @@ export CUBLAS_WORKSPACE_CONFIG=:16:8
 ```
 
 ## Data
-The data used in this project is available at [LINK](TODO). 
+The data used in this project is available at [LINK](https://viscom.datasets.uni-ulm.de/WSCD/Data.zip). 
 
 The data was previousely introduced in 
 
@@ -97,14 +101,13 @@ This codebase also holds the code for the compared methods using minimal labels 
 ```bash
 python Main_Location.py --project WSCD --seeds 42 123 7353 --annotation_time 38027 
 python Main_BoundingBox.py --project WSCD --seeds 42 123 7353 --annotation_time 38027 
-
 ```
 
 ## CAM implementation 
 We use the very helpful CAM implementation for pytorch from [here](https://github.com/jacobgil/pytorch-grad-cam). This code is included in our code base in `./GradCAM/`.
 
-## Reproducability and Model weights
-We provide the commands for reproducing the main experiments as well as model weights of the best models of our main experiments [Reproducability.md](Reproducability.md).
+## Reproducability
+We provide the commands for reproducing the main experiments in [Reproducability.md](Reproducability.md).
 
 ## Open Questions? 
 If you have any questions about this repository please do not hesitate to contact [hannah.kniesel@uni-ulm.de](hannah.kniesel@uni-ulm.de). 
