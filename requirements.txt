@@ -1,0 +1,11 @@
+scikit-image
+wandb
+matplotlib
+tqdm
+torchvision
+pycocotools==2.0.4
+ttach
+opencv-python
+torchmetrics
+scikit-learn
+selective-search
