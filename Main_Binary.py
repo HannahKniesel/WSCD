@@ -64,7 +64,7 @@ if __name__ == "__main__":
     parser.add_argument('--patience', type = int, default=3, help='Patience for early stopping (default:5)')
     parser.add_argument('--lr_t', type = float, default=0.0005, help='learning rate for translation(default:0.0005)')
     parser.add_argument('--lr_t_final', type = float, default=0.02, help='multiplicative factor for final lr (default:0.02)')
-    parser.add_argument('--pseudolabels_use_validation', type = str, default='false',choices=['true', 'false'], help='use validation for pseudolabels (default: false)')
+    parser.add_argument('--pseudolabels_use_validation', type = str, default='true',choices=['true', 'false'], help='use validation for pseudolabels (default: true)')
     parser.add_argument('--pseudolabels_gaussian_pdf', type = str, default='true',choices=['true', 'false'], help='Use normalized gaussian (integral = 1) (default: true)')
     parser.add_argument('--selective_search_mode', type = str, default='quality',choices=['fast', 'single', 'quality'], help='Selective search mode (default: fast)')
     parser.add_argument('--selective_search_topn', type = int, default=-1, help='Use top N boxes of selective search (default:-1)')
@@ -80,7 +80,7 @@ if __name__ == "__main__":
     parser.add_argument('--loss', type = str, default="logit", choices=['score', 'logit', 'oracle'], help='which loss to use (default:score)')
     parser.add_argument('--score_bb', type = str, default='mask_other_virus', choices=['mask_bg', 'mask_other_virus'], help='weather to mask BG or other virus for BB score computation (default: mask_other_virus)')
     parser.add_argument('--initialize', type = str, choices=["gradcam", "random", "selectivesearch", "oracle"], default="gradcam", help='Initialization of position (default: "gradcam")')
-    parser.add_argument('--max_iters', type = int, default=50, help='Max niters for optim (default:50)')
+    parser.add_argument('--max_iters', type = int, default=200, help='Max niters for optim (default:200)')
     parser.add_argument('--step', type = float, default=0.5, help='step*radius as step of sliding window (default: 0.5)')
 
 
