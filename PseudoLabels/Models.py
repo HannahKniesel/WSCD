@@ -12,7 +12,7 @@ from Variables import *
 # python Main_Binary.py --classifier_path "./TrainingRuns/Herpes/Binary/Classifier_Ablations/42_Classifier_Time_-1_wd8uuu30/" --data_split "val" --project Debug --max_iters 50 --init_cam false
 
 class TranslationMatrix_iterative(torch.nn.Module):
-    def __init__(self,init_pos = None, gaussian_pdf = False):
+    def __init__(self,init_pos = None, gaussian_pdf = True):
         super().__init__()
         if(init_pos != None):
             self.translation = torch.nn.Parameter(init_pos)

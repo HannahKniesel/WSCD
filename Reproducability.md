@@ -8,10 +8,10 @@ We provide the commands for rerunning the main experiments as well as model weig
 ```bash
 # Ours(Opt) and Ours(OD)
 python Main_Binary.py --project WSCD --seeds 42 123 7353 --annotation_time -1 --data_split train test --dataset herpes
-python Main_Binary.py --seeds 42 123 7353 --max_iters 200 --classifier_lr 0.0005 --data_split test train --dataset adeno --lr_t=0.005 --lr_t_final=0.02 --nms_max_iou=0.2 --project WSCD --pseudolabels_use_validation=true  
-python Main_Binary.py --seeds 42 123 7353 --max_iters 200 --classifier_lr=0.0005 --data_split test train --dataset noro --lr_t=0.0005 --lr_t_final=0.02 --nms_max_iou=0.01 --project WSCD --pseudolabels_use_validation=true
+python Main_Binary.py --seeds 42 123 7353 --max_iters 200 --classifier_lr 0.0005 --data_split test train --dataset adeno --lr_t=0.005 --lr_t_final=0.02 --nms_max_iou=0.3 --project WSCD --pseudolabels_use_validation=true  
+python Main_Binary.py --seeds 42 123 7353 --max_iters 200 --classifier_lr=0.0005 --data_split test train --dataset noro --lr_t=0.005 --lr_t_final=0.02 --nms_max_iou=0.01 --project WSCD --pseudolabels_use_validation=true
 python Main_Binary.py --seeds 42 123 7353 --max_iters 200 --classifier_lr=0.0005 --data_split test train --dataset papilloma --lr_t=0.001 --lr_t_final=0.02 --nms_max_iou=0.1 --project=WSCD  --pseudolabels_use_validation=true 
-python Main_Binary.py --seeds 42 123 7353 --max_iters 200 --classifier_lr=0.0005 --data_split test train --dataset=rota --lr_t=0.001 --lr_t_final=0.02 --nms_max_iou=0.1 --project=WSCD --pseudolabels_use_validation=true
+python Main_Binary.py --seeds 42 123 7353 --max_iters 200 --classifier_lr=0.0005 --data_split test train --dataset rota --lr_t=0.001 --lr_t_final=0.02 --nms_max_iou=0.1 --project=WSCD --pseudolabels_use_validation=true
 
 # BB
 python Main_BoundingBox.py --project WSCD --seeds 42 123 7353 --annotation_time 38027 --dataset herpes
